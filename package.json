@@ -1,0 +1,21 @@
+{
+  "name": "graphql-backend-example",
+  "version": "1.0.0",
+  "description": "Graphql learning application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "typescript",
+    "graphql",
+    "apollo"
+  ],
+  "author": "Konstantin Moklokov(moklokov.kostya@gmail.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.2"
+  }
+}
