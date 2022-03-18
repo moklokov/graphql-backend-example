@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ./src --ext .ts",
-    "prettier": "prettier --config .prettierrc.json 'src/**/*.ts' --write"
+    "prettier": "prettier --config .prettierrc.json 'src/**/*.ts' --write",
+    "dev": "ts-node-dev --transpile-only --no-notify --exit-child src/index.ts",
+    "gen-schema": "ts-node --transpile-only src/schema.ts"
   },
   "keywords": [
     "node",
@@ -25,5 +27,10 @@
     "prettier": "2.6.0",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "apollo-server": "^3.6.4",
+    "graphql": "^16.3.0",
+    "nexus": "^1.3.0"
   }
 }
