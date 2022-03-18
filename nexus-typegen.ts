@@ -4,7 +4,7 @@
  */
 
 
-
+import type { IDb } from "./src/db"
 
 
 
@@ -115,7 +115,7 @@ export type NexusGenFeaturesConfig = {
 }
 
 export interface NexusGenTypes {
-  context: any;
+  context: IDb;
   inputTypes: NexusGenInputs;
   rootTypes: NexusGenRootTypes;
   inputTypeShapes: NexusGenInputs & NexusGenEnums & NexusGenScalars;

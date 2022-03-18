@@ -1,5 +1,4 @@
 import { extendType, nonNull, stringArg } from "nexus";
-import { links } from "../fixtures/links";
 
 export const createLinkMutation = extendType({
   type: "Mutation",
@@ -11,17 +10,16 @@ export const createLinkMutation = extendType({
         url: nonNull(stringArg()),
       },
 
-      resolve(parent, args) {
+      resolve(parent, args, context) {
         const { description, url } = args;
-        const idCount = links.length + 1;
+        const newLink = context.prisma.link.create({
+          data: {
+            description: description,
+            url: url,
+          },
+        });
 
-        const link = {
-          id: idCount,
-          description: description,
-          url: url,
-        };
-        links.push(link);
-        return link;
+        return newLink;
       },
     });
   },
