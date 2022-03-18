@@ -1,5 +1,4 @@
-import { objectType, extendType } from "nexus";
-import { links } from "../fixtures/links";
+import { objectType } from "nexus";
 
 export const Link = objectType({
   name: "Link",
@@ -7,17 +6,5 @@ export const Link = objectType({
     t.nonNull.int("id");
     t.nonNull.string("description");
     t.nonNull.string("url");
-  },
-});
-
-export const LinkQuery = extendType({
-  type: "Query",
-  definition(t) {
-    t.nonNull.list.nonNull.field("feed", {
-      type: "Link",
-      resolve(parent, args, context, info) {
-        return links;
-      },
-    });
   },
 });
