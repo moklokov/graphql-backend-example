@@ -21,6 +21,7 @@ type Mutation {
 
 type Query {
   feed: [Link!]!
+  signin(email: String!, password: String!): AuthPayload!
 }
 
 type User {

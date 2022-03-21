@@ -4,7 +4,7 @@
  */
 
 
-import type { IDb } from "./src/db"
+import type { IContext } from "./src/context"
 
 
 
@@ -73,6 +73,7 @@ export interface NexusGenFieldTypes {
   }
   Query: { // field return type
     feed: NexusGenRootTypes['Link'][]; // [Link!]!
+    signin: NexusGenRootTypes['AuthPayload']; // AuthPayload!
   }
   User: { // field return type
     email: string; // String!
@@ -99,6 +100,7 @@ export interface NexusGenFieldTypeNames {
   }
   Query: { // field return type name
     feed: 'Link'
+    signin: 'AuthPayload'
   }
   User: { // field return type name
     email: 'String'
@@ -117,6 +119,12 @@ export interface NexusGenArgTypes {
     signup: { // args
       email: string; // String!
       name: string; // String!
+      password: string; // String!
+    }
+  }
+  Query: {
+    signin: { // args
+      email: string; // String!
       password: string; // String!
     }
   }
@@ -153,7 +161,7 @@ export type NexusGenFeaturesConfig = {
 }
 
 export interface NexusGenTypes {
-  context: IDb;
+  context: IContext;
   inputTypes: NexusGenInputs;
   rootTypes: NexusGenRootTypes;
   inputTypeShapes: NexusGenInputs & NexusGenEnums & NexusGenScalars;
